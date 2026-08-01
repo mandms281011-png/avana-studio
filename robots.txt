@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mandms281011-png.github.io/avana-studio/sitemap.xml
