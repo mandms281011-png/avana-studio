@@ -4,170 +4,199 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>あなたのAI分身が、動画を量産する｜AVANA STUDIO</title>
-<meta name="description" content="写真数枚と1分の音声からAIアバターを生成。撮影・顔出しなしで広告動画・ウェビナー動画を量産。公式LINEで資料配布中。">
+<meta name="description" content="一本も撮らずに、動画が増えていく。あなたそっくりのAI分身が広告・ウェビナー動画を量産する仕組みを、無料動画資料で公開中。公式LINEで受け取れます。">
 <meta property="og:title" content="あなたのAI分身が、動画を量産する｜AVANA STUDIO">
-<meta property="og:description" content="撮影ゼロ・出演ゼロ。AIアバターが広告もウェビナーも作り続けます。公式LINEで資料配布中。">
+<meta property="og:description" content="撮影ゼロ・出演ゼロ。AI分身が広告もウェビナーも作り続ける仕組みを無料動画資料で公開中。">
 <meta property="og:image" content="https://mandms281011-png.github.io/avana-studio/og-image.jpg">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://mandms281011-png.github.io/avana-studio/lp.html">
 <style>
-:root{--bg:#05060f;--panel:rgba(255,255,255,.05);--brd:rgba(255,255,255,.11);
---cyan:#22d3ee;--blue:#4f7bff;--purple:#a855f7;--ink:#eef2ff;--muted:#9aa4c8;
---line:#06C755;--grad:linear-gradient(100deg,#22d3ee,#4f7bff 48%,#a855f7);
---gradsoft:linear-gradient(100deg,rgba(34,211,238,.16),rgba(168,85,247,.16))}
+:root{
+--navy:#0a0f24;--navy2:#0e142e;--panel2:#101735;
+--gold:#e8c56b;--goldsoft:rgba(232,197,107,.14);
+--mag:#e5308f;
+--cyan:#39d0e8;--ink:#f2f4ff;--muted:#aab3d6;--brd:rgba(255,255,255,.1);
+--green:#1fbf3e;--green2:#2ad14c;
+--goldgrad:linear-gradient(100deg,#f3dc9a,#e8c56b 45%,#c9944a);
+--hotgrad:linear-gradient(100deg,#e5308f,#8b3df0)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
-background:var(--bg);color:var(--ink);line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased;
-padding-bottom:92px}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:
-radial-gradient(560px 420px at 12% -4%,rgba(34,211,238,.16),transparent 60%),
-radial-gradient(620px 480px at 92% 4%,rgba(168,85,247,.16),transparent 60%),
-radial-gradient(700px 560px at 50% 110%,rgba(79,123,255,.12),transparent 60%),var(--bg)}
+background:var(--navy);color:var(--ink);line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;padding-bottom:96px}
 a{color:inherit;text-decoration:none}
 img,video{max-width:100%;display:block}
 .wrap{max-width:520px;margin:0 auto;padding:0 20px}
-.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:.05em 0}
-section{padding:52px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.16em;color:#dbe6ff;padding:6px 15px;border-radius:999px;background:var(--gradsoft);border:1px solid var(--brd)}
-.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan)}
-h2{font-size:1.5rem;font-weight:900;line-height:1.45;margin:14px 0 8px}
-.sec-lead{color:var(--muted);font-size:.92rem}
-.card{background:var(--panel);border:1px solid var(--brd);border-radius:16px;padding:20px 22px}
+section{padding:56px 0}
 .center{text-align:center}
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+.eyebrow{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:.3em;color:var(--gold);margin-bottom:10px}
+h2{font-size:1.55rem;font-weight:900;line-height:1.5;text-align:center}
+h2 .gold{color:var(--gold)}
+.hr-grad{width:64px;height:4px;background:var(--hotgrad);border-radius:2px;margin:18px auto 0}
+.gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
 /* CTA */
-.cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--line);color:#fff;font-weight:800;font-size:1.05rem;padding:17px 20px;border-radius:14px;box-shadow:0 12px 34px -10px rgba(6,199,85,.65);transition:transform .15s}
+.cta{display:block;background:linear-gradient(180deg,var(--green2),var(--green));color:#fff;text-align:center;font-weight:900;font-size:1.06rem;padding:16px 18px;border-radius:12px;box-shadow:0 10px 28px -8px rgba(31,191,62,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .15s}
 .cta:active{transform:scale(.97)}
-.cta small{display:block;font-weight:600;font-size:.72rem;opacity:.92}
-.cta-note{text-align:center;font-size:.75rem;color:var(--muted);margin-top:9px}
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(5,6,15,.82);backdrop-filter:blur(14px);border-top:1px solid var(--brd)}
-.sticky .cta{max-width:480px;margin:0 auto;padding:14px 18px;font-size:1rem;animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 10px 30px -10px rgba(6,199,85,.6)}50%{box-shadow:0 10px 40px -6px rgba(6,199,85,.95)}}
-/* hero */
-.hero{padding:40px 0 46px}
-.hero .badge{display:inline-block;background:#fff;color:#0b1020;font-weight:800;font-size:.82rem;padding:7px 16px;border-radius:999px}
-h1{font-size:2rem;font-weight:900;line-height:1.4;margin:16px 0 10px}
-.hero-lead{color:#c9d3ef;font-size:.95rem}
-.hero-lead b{color:#fff}
-.hero-visual{position:relative;margin:24px auto 0;max-width:340px;border-radius:20px;overflow:hidden;border:1px solid rgba(34,211,238,.35);box-shadow:0 24px 60px -20px rgba(34,211,238,.35)}
-.hero-visual img{width:100%}
-.hero-tag{position:absolute;left:12px;bottom:12px;background:rgba(5,6,15,.78);backdrop-filter:blur(8px);border:1px solid rgba(34,211,238,.5);color:#fff;font-size:.78rem;font-weight:700;padding:7px 13px;border-radius:999px}
-.reveal{margin:18px auto 0;max-width:340px;text-align:center;font-size:.98rem;font-weight:800;color:#fff}
-.reveal b{color:var(--cyan)}
-/* video */
-.vframe{position:relative;max-width:300px;margin:22px auto 0;border-radius:18px;overflow:hidden;border:1px solid var(--brd);box-shadow:0 20px 50px -18px rgba(79,123,255,.5)}
-.vframe video{width:100%;aspect-ratio:9/16;object-fit:cover}
-/* check list */
-.chk{display:grid;gap:12px;margin-top:20px}
-.chk .card{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;padding:16px 18px}
-.chk .card::before{content:"☑";color:var(--cyan);font-weight:800;font-size:1.05rem;line-height:1.6}
+.cta small{display:block;font-weight:700;font-size:.78rem;opacity:.95;margin-top:2px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,15,36,.85);backdrop-filter:blur(14px);border-top:1px solid var(--brd)}
+.sticky .cta{max-width:492px;margin:0 auto;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 10px 26px -8px rgba(31,191,62,.65)}50%{box-shadow:0 10px 36px -4px rgba(31,191,62,1)}}
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:52px 0 0;background:
+radial-gradient(600px 420px at 85% -5%,rgba(139,61,240,.4),transparent 60%),
+radial-gradient(560px 420px at 0% 10%,rgba(229,48,143,.32),transparent 60%),
+linear-gradient(180deg,#171034 0%,#12102e 55%,var(--navy) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-copy1{font-size:2.15rem;font-weight:900;line-height:1.4;text-align:center;text-shadow:0 4px 24px rgba(0,0,0,.5)}
+.hero-copy1 .gold{color:var(--gold)}
+.hero-sub{margin-top:16px;text-align:center;font-size:1.02rem;font-weight:800;line-height:1.85}
+.hero-sub .kage{background:var(--hotgrad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+.hero-sub .box{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:1px 10px;border-radius:6px;font-weight:900}
+.hero-title{margin-top:26px;text-align:center}
+.hero-title .t1{font-size:2rem;font-weight:900;letter-spacing:.04em}
+.hero-title .t2{font-size:1.2rem;font-weight:900;margin-top:2px}
+.hero-title .t2 b{background:#fff;color:#12102e;padding:2px 12px;border-radius:6px;margin-right:8px}
+.hero-avatar{position:relative;max-width:290px;margin:26px auto -2px;border-radius:18px 18px 0 0;overflow:hidden;border:1px solid rgba(232,197,107,.35);border-bottom:none;box-shadow:0 -6px 60px -12px rgba(229,48,143,.45)}
+.hero-tagchip{position:absolute;left:10px;bottom:10px;background:rgba(10,15,36,.8);backdrop-filter:blur(8px);border:1px solid var(--gold);color:var(--gold);font-size:.76rem;font-weight:800;padding:6px 12px;border-radius:999px}
+/* form card */
+.formcard{background:#fff;color:#0b1020;padding:22px 20px 20px;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.formcard .bar{background:#12102e;color:#fff;font-weight:900;text-align:center;font-size:.95rem;padding:10px;border-radius:8px;margin-bottom:14px}
+.formcard .note{font-size:.66rem;color:#667;line-height:1.7;margin-top:12px}
+/* troubles */
+.dark2{background:var(--navy2)}
+.story{display:grid;gap:14px;margin-top:26px}
+.story .card{background:var(--panel2);border-left:4px solid var(--mag);border-radius:0 12px 12px 0;padding:18px 20px;font-size:.93rem}
+.story .card b{color:var(--gold)}
+.sumcard{background:var(--panel2);border:1px solid var(--brd);border-radius:14px;padding:22px;margin-top:22px;font-size:.94rem;text-align:center}
+.goldbox{border:1px solid var(--gold);border-radius:10px;background:var(--goldsoft);padding:18px 20px;margin-top:18px;font-weight:800;line-height:2;color:var(--gold);text-align:center;font-size:.96rem}
+.goldbox .mg{color:var(--mag)}
+/* root cause */
+.tried{display:grid;gap:14px;margin-top:26px}
+.tried .card{background:var(--panel2);border:1px solid var(--brd);border-radius:12px;padding:16px 20px;font-size:.92rem}
+.tried .t{color:var(--cyan);font-weight:800}
+.tried .d{color:var(--mag);font-weight:800}
+.tried .body{color:var(--muted)}
 /* points */
-.pts{display:grid;gap:14px;margin-top:22px}
-.pt-num{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--grad);font-weight:900;font-size:.8rem;color:#fff;margin-bottom:10px;box-shadow:0 0 24px -8px rgba(79,123,255,.9)}
-.pts .tt{font-size:1.02rem;font-weight:800;margin-bottom:5px}
-.pts .mut{color:var(--muted);font-size:.88rem}
-/* before/after */
-.ba{display:grid;gap:12px;margin-top:22px}
-.ba .card{padding:16px 18px}
-.ba .x{color:#ff7b93;font-size:.88rem;font-weight:700}
-.ba .o{color:#4ade80;font-size:.95rem;font-weight:800;margin-top:4px}
-/* steps */
-.steps{display:grid;gap:12px;margin-top:22px;counter-reset:st}
-.steps .card{position:relative;padding-left:66px}
-.steps .card::before{counter-increment:st;content:counter(st);position:absolute;left:18px;top:20px;width:34px;height:34px;border-radius:10px;background:var(--grad);color:#fff;font-weight:900;display:grid;place-items:center}
-.steps .tt{font-weight:800;margin-bottom:3px}
-.steps .mut{color:var(--muted);font-size:.87rem}
+.sol-intro{margin-top:22px;font-size:.97rem;line-height:2}
+.sol-intro b{color:var(--gold)}
+.sol-intro .cy{color:var(--cyan);font-weight:800}
+.pts{display:grid;gap:14px;margin-top:26px}
+.pts .card{background:var(--panel2);border:1px solid var(--brd);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.ptn{flex:none;width:46px;height:46px;border-radius:50%;background:var(--hotgrad);display:grid;place-items:center;font-size:.62rem;font-weight:900;line-height:1.25;text-align:center;box-shadow:0 6px 18px -6px rgba(229,48,143,.8)}
+.pts .tt{font-weight:900;font-size:.98rem;margin-bottom:4px}
+.pts .mut{color:var(--muted);font-size:.86rem}
+/* before after */
+.ba{display:grid;gap:14px;margin-top:26px}
+.ba .pair{background:var(--panel2);border:1px solid var(--brd);border-radius:12px;overflow:hidden}
+.ba .x{padding:12px 18px;color:var(--muted);font-size:.88rem;font-weight:700}
+.ba .x::before{content:"❌ ";font-size:.8rem}
+.ba .o{border-top:1px solid var(--brd);border-left:4px solid var(--gold);padding:12px 18px;font-size:.94rem;font-weight:800}
+.ba .o::before{content:"✓ ";color:var(--gold)}
+/* contents */
+.cts{display:grid;gap:12px;margin-top:26px}
+.cts .card{background:var(--panel2);border:1px solid var(--brd);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:15px 18px;font-size:.9rem}
+.cts .card::before{content:"● ";color:var(--gold);font-size:.7rem;vertical-align:2px}
+/* proof */
+.vframe{max-width:290px;margin:26px auto 0;border-radius:16px;overflow:hidden;border:1px solid var(--brd);box-shadow:0 20px 50px -18px rgba(139,61,240,.55)}
+.vframe video{width:100%;aspect-ratio:9/16;object-fit:cover}
+/* offer */
+.offerbox{border:1px solid var(--cyan);border-radius:16px;background:rgba(57,208,232,.06);padding:24px 22px;margin-top:26px}
+.offerbox .q{background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:12px 16px;font-size:.9rem;margin-top:12px;color:#dce4ff}
+.offerbox .safety{border:1px solid var(--gold);border-radius:10px;background:var(--goldsoft);padding:12px 16px;margin-top:16px;font-size:.88rem;color:var(--gold);font-weight:700;text-align:center}
+.offerbox .last{margin-top:16px;text-align:center;font-size:.9rem;color:var(--muted)}
+.offerbox .last b{color:var(--cyan)}
 /* gifts */
-.gift{display:grid;gap:12px;margin-top:22px}
-.gift .card{display:flex;gap:14px;align-items:center;border:1px solid rgba(34,211,238,.4)}
-.gift .no{flex:none;width:46px;height:46px;border-radius:50%;background:var(--gradsoft);border:1px solid var(--brd);display:grid;place-items:center;font-size:1.2rem}
-.gift .tt{font-weight:800;font-size:.97rem}
-.gift .mut{color:var(--muted);font-size:.83rem}
-/* trial */
-.trial{border:1px solid rgba(34,211,238,.55);background:linear-gradient(170deg,rgba(34,211,238,.1),rgba(168,85,247,.08));border-radius:18px;padding:24px 22px;margin-top:22px}
-.trial .tag{display:inline-block;background:var(--grad);color:#fff;font-size:.72rem;font-weight:800;padding:4px 14px;border-radius:999px;margin-bottom:8px}
-.trial .price{font-size:2rem;font-weight:900}
-.trial .price small{font-size:.8rem;color:var(--muted);font-weight:600}
-/* faq */
-.faq{display:grid;gap:12px;margin-top:22px}
-.faq .q{font-weight:800;font-size:.95rem;margin-bottom:6px}
-.faq .q::before{content:"Q. ";color:var(--cyan)}
-.faq .a{color:var(--muted);font-size:.88rem}
-.faq .a::before{content:"A. ";color:var(--purple);font-weight:800}
-footer{padding:36px 0 20px;text-align:center;color:var(--muted);font-size:.78rem;border-top:1px solid var(--brd)}
-footer a{margin:0 8px}
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
-@media(min-width:600px){h1{font-size:2.3rem}}
+.gift{display:grid;gap:12px;margin-top:26px}
+.gift .card{background:var(--panel2);border:1px solid var(--brd);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.gift .tag{flex:none;background:var(--goldgrad);color:#241a05;font-size:.68rem;font-weight:900;padding:8px 10px;border-radius:8px;text-align:center;line-height:1.35}
+.gift .tt{font-weight:900;font-size:.95rem}
+.gift .mut{color:var(--muted);font-size:.82rem}
+.stepnote{margin-top:18px;text-align:center;font-size:.82rem;color:var(--muted);line-height:2}
+.stepnote b{color:var(--gold)}
+/* closing */
+.closing{background:
+radial-gradient(540px 400px at 50% 120%,rgba(139,61,240,.35),transparent 65%),
+linear-gradient(180deg,var(--navy) 0%,#151033 100%);text-align:center}
+.pill{display:inline-block;background:var(--hotgrad);color:#fff;font-size:.8rem;font-weight:900;padding:7px 20px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(229,48,143,.8)}
+.closing h2{margin-top:18px;font-size:1.7rem}
+.closing .lead{margin-top:14px;color:var(--muted);font-size:.93rem}
+footer{padding:36px 0 20px;text-align:center;color:var(--muted);font-size:.76rem;border-top:1px solid var(--brd)}
+footer a{margin:0 7px}
+@media(min-width:600px){.hero-copy1{font-size:2.5rem}}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="wrap center">
-    <span class="badge">顔出し撮影を続けるのが大変な方へ</span>
-    <h1>あなたの<span class="grad">AI分身</span>が、<br>広告もウェビナーも<br>作り続ける。</h1>
-    <p class="hero-lead">写真数枚と1分の音声から、<b>姿・声そのまま</b>のAIアバターを生成。<br>撮影ゼロ・出演ゼロで、動画を量産できます。</p>
-    <div class="hero-visual">
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="hero-copy1 serif">一本も撮らず、<br><span class="gold">動画が増えていく。</span></p>
+    <p class="hero-sub">あなたそっくりの<span class="kage">「AI分身」</span>が<br>勝手に広告・ウェビナー動画を量産する<br><span class="box">AI動画工場</span> を作りませんか？</p>
+    <div class="hero-title">
+      <div class="t1 serif gold-text">AIアバター動画</div>
+      <div class="t2"><b>無料</b>動画資料 公開中</div>
+    </div>
+    <div class="hero-avatar">
       <img src="works/avatar-front.jpg" alt="AIアバター" loading="eager">
-      <span class="hero-tag">✨ この女性、実在しません</span>
+      <span class="hero-tagchip">✨ この女性、実在しません</span>
     </div>
-    <p class="reveal">写真から生まれた<b>AIアバター</b>です。<br>あなたの分身も、同じように作れます。</p>
-    <div style="margin-top:26px">
-      <a class="cta" href="https://lin.ee/Yx8M7LxH">🟢 公式LINEで無料動画資料を受け取る<small>友だち追加は無料・30秒で完了</small></a>
-      <p class="cta-note">「AI分身でできること」がわかる動画資料＋料金表をすぐお届けします</p>
+  </div>
+  <div class="formcard">
+    <div class="wrap">
+      <div class="bar">▼ 無料動画資料の視聴はこちらから ▼</div>
+      <a class="cta" href="https://lin.ee/Yx8M7LxH">▶ 公式LINEで今すぐ無料視聴する！<small>友だち追加は無料・30秒で完了</small></a>
+      <p class="note">※ 公式LINEの友だち追加後、すぐに動画資料をお届けします。しつこい営業・迷惑な配信は行いません。ブロックはいつでも可能です。お預かりする情報は当社プライバシーポリシーに基づき管理します。</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- PROOF VIDEO -->
-<section>
-  <div class="wrap center">
-    <span class="eyebrow">SAMPLE</span>
-    <h2>まずは、実物を<br>ご覧ください。</h2>
-    <p class="sec-lead">これがAIアバター動画。撮影は一切していません。</p>
-    <div class="vframe">
-      <video src="works/avatar-video-1.mp4" poster="works/avatar-video-1-poster.jpg" autoplay muted loop playsinline></video>
+<!-- TROUBLES -->
+<section class="dark2">
+  <div class="wrap">
+    <span class="eyebrow">TROUBLES</span>
+    <h2>こんな経験<br><span class="gold serif">ありませんか？</span></h2>
+    <div class="hr-grad"></div>
+    <div class="story">
+      <div class="card">動画のために撮影日を調整して、メイクと照明とリハーサル。丸1日かけて撮影した1本の見積もりは数十万円。<br>その動画を使ったのは、<b>たった1回だった。</b></div>
+      <div class="card">広告用に動画を量産したいのに、撮影のたびに本業が止まる。仕事が終わると夜。<br>疲れ切っていて、<b>動画を撮る気力も時間もない。</b></div>
+      <div class="card">ようやく完成した動画。なのにサービス内容が変わって、また撮り直し。<br>また最初から……<b>心が折れた。</b></div>
     </div>
-    <p class="cta-note" style="margin-top:12px">▶ 他のサンプルは<a href="portfolio.html" style="color:var(--cyan);text-decoration:underline">ポートフォリオ</a>でも公開中</p>
+    <div class="sumcard">
+      あなたにも心当たりはありませんか？<br>動画活用でつまずいた会社の、ほぼ全社が経験していることです。<br><br>でも、原因はあなたのノウハウでも、センスでも、根性でもありません。
+      <div class="goldbox">「動画は、人が出演して<br>撮影するものだ」<br><span class="mg">という、時代遅れの常識に</span><br>縛られているからです。</div>
+    </div>
   </div>
 </section>
 
-<!-- PAIN -->
+<!-- ROOT CAUSE -->
 <section>
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">CHECK</span>
-      <h2>こんなお悩み、<br>ありませんか？</h2>
+    <span class="eyebrow">ROOT CAUSE</span>
+    <h2>なぜ、動画が<br><span class="gold serif">ボトルネックになるのか？</span></h2>
+    <div class="hr-grad"></div>
+    <div class="tried">
+      <div class="card"><span class="t">試した</span> → 制作会社に外注してみた<br><span class="d">でも…</span><span class="body">1本ごとに数十万円。修正のたびに追加費用と時間がかかり、量産なんて夢のまた夢だった。</span></div>
+      <div class="card"><span class="t">試した</span> → スマホで自社撮影してみた<br><span class="d">でも…</span><span class="body">クオリティが出ない。編集を覚える前に、担当者の夜と週末が消えていった。</span></div>
+      <div class="card"><span class="t">試した</span> → AIツールを自分で触ってみた<br><span class="d">でも…</span><span class="body">新しいツールの紹介は山ほど出てくる。でも、何をどう組み合わせればいいのか、結局迷子になった。</span></div>
     </div>
-    <div class="chk">
-      <div class="card">動画を作りたいが、撮影・編集で1本あたり数十万円かかる</div>
-      <div class="card">広告やSNSに動画を量産したいが、人手が追いつかない</div>
-      <div class="card">毎回本人が出演・収録していて、時間が奪われている</div>
-      <div class="card">顔出しや話すことに、正直ちょっと抵抗がある</div>
-      <div class="card">ウェビナーの内容を変えるたびに、撮り直しになる</div>
+    <div class="sumcard" style="text-align:left">
+      断片的な情報を追いかけ続けても、時間だけが過ぎていきます。<br><br>
+      <span style="color:var(--gold);font-weight:800">素材のお預かりから、分身の生成、台本、動画の量産まで——成果を出すためだけに考え抜かれた「一気通貫の制作体制」が必要です。</span>
     </div>
-    <p style="margin-top:22px;font-size:.95rem;color:#c9d3ef;text-align:center">ひとつでも当てはまるなら——<br>動画のボトルネックは<b class="grad" style="font-weight:900">「人」</b>です。</p>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- SOLUTION POINTS -->
-<section>
+<!-- SOLUTION -->
+<section class="dark2">
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">SOLUTION</span>
-      <h2><span class="grad">AI分身</span>なら、<br>ぜんぶ解決できます。</h2>
-    </div>
+    <span class="eyebrow">SOLUTION</span>
+    <h2><span class="gold serif">『AI分身・動画量産システム』</span><br>とは？</h2>
+    <div class="hr-grad"></div>
+    <p class="sol-intro">撮影も、出演も、あなたがやる必要は<b>もうありません。</b><br>あなたのデジタル分身＝「AIアバター」を一度作り上げれば、AI社員が<span class="cy">24時間365日、動画を量産し続けます。</span></p>
     <div class="pts">
-      <div class="card"><span class="pt-num">01</span><div class="tt">台本を入れるだけで、動画が量産される</div><div class="mut">アバター完成後は、テキストを渡すだけ。広告もウェビナーも研修も、何本でも。修正は打ち替えるだけで、撮り直しという概念がなくなります。</div></div>
-      <div class="card"><span class="pt-num">02</span><div class="tt">40以上の言語を、同じ顔・同じ声で</div><div class="mut">吹き替えではなく、あなたの分身がそのまま外国語で話します。海外・インバウンド展開もテキストひとつ。</div></div>
-      <div class="card"><span class="pt-num">03</span><div class="tt">同じアバターが、24時間AI接客まで</div><div class="mut">HPやLINEに組み込めば、お客様の質問に自動回答。動画とチャットを1体の分身で統一できるのは当社ならでは。</div></div>
-      <div class="card"><span class="pt-num">04</span><div class="tt">最短3営業日・従来の最大1/5コスト</div><div class="mut">スタジオ・カメラ・出演者が不要だから、速くて安い。思い立った日に台本を書けば、数日後には動画になっています。</div></div>
-      <div class="card"><span class="pt-num">05</span><div class="tt">素材はスマホでOK。専門知識は不要</div><div class="mut">必要なのは写真数枚と1分ほどの音声だけ。あとはすべてお任せください。</div></div>
+      <div class="card"><span class="ptn">Point<br>1</span><div><div class="tt">一言も喋らず、撮影ゼロで動画が完成</div><div class="mut">台本のテキストを渡すだけ。なぜそれで済むのかは、動画資料の中で。</div></div></div>
+      <div class="card"><span class="ptn">Point<br>2</span><div><div class="tt">修正も量産も、テキストを打ち替えるだけ</div><div class="mut">「撮り直し」という概念が消えます。あなたの仕事は「OK」を出すことだけ。</div></div></div>
+      <div class="card"><span class="ptn">Point<br>3</span><div><div class="tt">しかも、働くのは動画の中だけではありません</div><div class="mut">あなたの分身は、あなたが寝ている間も働けます。——続きは、動画でご覧ください。</div></div></div>
     </div>
   </div>
 </section>
@@ -175,79 +204,96 @@ footer a{margin:0 8px}
 <!-- BEFORE AFTER -->
 <section>
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">BEFORE / AFTER</span>
-      <h2>導入すると、<br>毎日がこう変わる。</h2>
-    </div>
+    <span class="eyebrow">BEFORE / AFTER</span>
+    <h2>あなたの会社の動画が、<br><span class="gold serif">こう変わる</span></h2>
+    <div class="hr-grad"></div>
     <div class="ba">
-      <div class="card"><div class="x">❌ 動画1本のために撮影日を調整し、丸1日拘束</div><div class="o">✓ 台本を送るだけ。あなたは1分も拘束されない</div></div>
-      <div class="card"><div class="x">❌ 修正のたびに撮り直しで、追加費用と時間</div><div class="o">✓ テキストを打ち替えるだけで即修正</div></div>
-      <div class="card"><div class="x">❌ 広告のパターン出しは月1本が限界</div><div class="o">✓ A/Bテスト用に10本でも量産できる</div></div>
-      <div class="card"><div class="x">❌ 営業時間外の問い合わせを取りこぼす</div><div class="o">✓ 分身が24時間、会社の顔として立ち続ける</div></div>
+      <div class="pair"><div class="x">撮影日の調整だけで1ヶ月</div><div class="o">台本を送るだけで、数日後に納品</div></div>
+      <div class="pair"><div class="x">1本数十万円で、量産は不可能</div><div class="o">従来の最大1/5コストで何本でも</div></div>
+      <div class="pair"><div class="x">修正のたびに撮り直し・追加費用</div><div class="o">テキストを打ち替えるだけで即修正</div></div>
+      <div class="pair"><div class="x">顔出し・出演のプレッシャー</div><div class="o">分身が代わりに出演し続けてくれる</div></div>
     </div>
     <div style="margin-top:26px">
-      <a class="cta" href="https://lin.ee/Yx8M7LxH">🟢 公式LINEで無料動画資料を見る<small>動画資料・料金表をすぐお届け</small></a>
+      <a class="cta" href="https://lin.ee/Yx8M7LxH">▶ 今すぐ無料で動画資料を見る！<small>公式LINEですぐ視聴できます</small></a>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- FLOW -->
-<section>
+<!-- CONTENTS -->
+<section class="dark2">
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">FLOW</span>
-      <h2>制作は、<br>たった3ステップ。</h2>
+    <span class="eyebrow">CONTENTS</span>
+    <h2>無料動画資料で<br><span class="gold serif">お伝えする内容</span></h2>
+    <div class="hr-grad"></div>
+    <div class="cts">
+      <div class="card">いま画面で話しているのがAIだと、あなたは見抜けますか？——冒頭30秒の「ネタバラシ」</div>
+      <div class="card">写真数枚と、たった1分の「あるもの」から、あなたの分身が生まれる仕組み</div>
+      <div class="card">撮影ゼロの会社が、裏でやっている動画量産の正体</div>
+      <div class="card">あなたの分身が、あなたに"できないこと"までやってしまう話</div>
+      <div class="card">そして——あなたの会社で、最初に分身へ任せるべき業務とは？</div>
     </div>
-    <div class="steps">
-      <div class="card"><div class="tt">素材をお預かり</div><div class="mut">写真数枚＋1分ほどの音声。スマホ撮影でOK、機材は不要です。</div></div>
-      <div class="card"><div class="tt">AIアバターを生成</div><div class="mut">表情・口の動き・声を学習し、本人そっくりの分身を制作。最短3営業日。</div></div>
-      <div class="card"><div class="tt">台本を入れて動画化</div><div class="mut">原稿を送るだけで、広告もウェビナーも何本でも量産できます。</div></div>
-    </div>
+    <p style="margin-top:16px;text-align:center;font-size:.85rem;color:var(--muted)">……続きは、5分の動画資料でご覧ください。</p>
   </div>
 </section>
 
-<!-- LINE GIFTS -->
+<!-- PROOF -->
 <section>
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">LINE限定</span>
-      <h2>友だち追加で、<br>3大特典をプレゼント。</h2>
-    </div>
-    <div class="gift">
-      <div class="card"><span class="no">🎬</span><div><div class="tt">無料動画資料</div><div class="mut">「AI分身で何ができるか」が5分でわかるサービス紹介ムービー。この動画自体もAIアバター製です</div></div></div>
-      <div class="card"><span class="no">📕</span><div><div class="tt">サービス資料（料金表つき）</div><div class="mut">全プラン・オプションの料金と内容がわかる保存版PDF</div></div></div>
-      <div class="card"><span class="no">💬</span><div><div class="tt">無料個別相談<span style="display:inline-block;background:var(--grad);color:#fff;font-size:.68rem;font-weight:800;padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:2px">動画を見た方限定</span></div><div class="mut">動画資料をご覧いただいた方だけに、御社ならどこで一番効果が出るかを1対1でご提案します（オンライン15分〜）</div></div></div>
-    </div>
-    <div style="margin-top:24px">
-      <a class="cta" href="https://lin.ee/Yx8M7LxH">🟢 友だち追加して無料動画資料を受け取る<small>無料・30秒で完了／しつこい営業はしません</small></a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section>
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">FAQ</span>
-      <h2>よくあるご質問</h2>
-    </div>
-    <div class="faq">
-      <div class="card"><div class="q">本人が出演・収録する必要はありますか？</div><div class="a">不要です。最初に写真数枚と1分ほどの音声をご提供いただくだけで、以降は台本のテキストだけで動画が作れます。</div></div>
-      <div class="card"><div class="q">顔写真や声のデータが不安です。</div><div class="a">用途と公開範囲を契約で明確に定め、厳重に管理します。無断で第三者に提供することは一切ありません。</div></div>
-      <div class="card"><div class="q">男性のアバターも作れますか？</div><div class="a">はい、男性・女性どちらも制作可能です。複数人の分身を作ることもできます。</div></div>
-      <div class="card"><div class="q">どのくらいで完成しますか？</div><div class="a">アバター生成は最短3営業日。以降の動画は台本をいただいてから数日でお届けします。</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section style="padding-bottom:64px">
   <div class="wrap center">
-    <h2>次にこの画面で話すのは、<br><span class="grad">あなたの分身</span>かもしれません。</h2>
-    <p class="sec-lead" style="margin-bottom:22px">まずはLINEで無料動画資料をご覧ください。<br>動画を見たあなただけが、無料個別相談に進めます。</p>
-    <a class="cta" href="https://lin.ee/Yx8M7LxH">🟢 公式LINEで無料相談する<small>無料動画資料・料金表もすぐお届け</small></a>
+    <span class="eyebrow">PROOF</span>
+    <h2>実物を、先に<br><span class="gold serif">少しだけ。</span></h2>
+    <div class="hr-grad"></div>
+    <p style="margin-top:18px;font-size:.92rem;color:var(--muted)">これがAIアバター動画。撮影は一切していません。</p>
+    <div class="vframe">
+      <video src="works/avatar-video-1.mp4" poster="works/avatar-video-1-poster.jpg" autoplay muted loop playsinline></video>
+    </div>
+    <p style="margin-top:14px;font-size:.8rem;color:var(--muted)">▶ その他のサンプルは<a href="portfolio.html" style="color:var(--cyan);text-decoration:underline">ポートフォリオ</a>でも公開中</p>
+  </div>
+</section>
+
+<!-- SPECIAL OFFER -->
+<section class="dark2">
+  <div class="wrap">
+    <span class="eyebrow">SPECIAL OFFER</span>
+    <h2>動画を見た方だけ、<br><span class="gold serif">1対1の無料個別相談へ</span></h2>
+    <div class="hr-grad"></div>
+    <div class="offerbox">
+      <div class="center" style="font-weight:900;font-size:1.05rem;color:var(--cyan)">AI分身導入・個別相談（無料）</div>
+      <div class="q">「自分の会社なら、具体的にどの業務からAIに任せればいいか？」</div>
+      <div class="q">「導入したら、どのくらい集客や工数にインパクトがあるのか？」</div>
+      <p style="margin-top:16px;font-size:.9rem">動画資料をご覧いただいた方には、あなたの現状をお聞きして、どこから分身を導入すべきかを<b style="color:#fff">あなた専用に具体的にご提案</b>します（オンライン15分〜）。</p>
+      <div class="safety">押し売りは一切しません。相談を受けるだけでも、必ず持ち帰るものがある時間にします。</div>
+      <p class="last">サービス資料・料金表は、<b>個別相談の場でだけ</b>お渡ししています。<br>まずは動画資料をご覧ください。動画の最後に、<b>個別相談のご案内</b>があります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL GIFT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">SPECIAL GIFT</span>
+    <h2>受け取れるものは、<br><span class="gold serif">この順番で増えていく</span></h2>
+    <div class="hr-grad"></div>
+    <div class="gift">
+      <div class="card"><span class="tag">STEP<br>①</span><div><div class="tt">友だち追加 →『AI分身でできること』無料動画資料</div><div class="mut">この動画自体もAIアバター製。5分で全体像がわかります</div></div></div>
+      <div class="card"><span class="tag">STEP<br>②</span><div><div class="tt">動画を見た方だけ → 1対1の無料個別相談</div><div class="mut">御社ならどこで一番効果が出るかを個別にご提案（15分〜）</div></div></div>
+      <div class="card"><span class="tag">STEP<br>③</span><div><div class="tt">相談した方だけ → サービス資料・料金表</div><div class="mut">全プラン・料金は個別相談の場でのみお渡しします</div></div></div>
+    </div>
+    <p class="stepnote">サービス資料・料金表は一般公開していません。<br><b>動画 → 相談 → 資料</b> の順にだけ、進めます。</p>
+    <div style="margin-top:22px">
+      <a class="cta" href="https://lin.ee/Yx8M7LxH">▶ まずは友だち追加して動画を見る！<small>無料・30秒で完了／しつこい営業はしません</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <span class="pill">🎬 無料公開中</span>
+    <h2 class="serif">撮影に消える苦労から、<br><span class="gold">今日、抜け出す。</span></h2>
+    <p class="lead">早く動く会社ほど、動画資産が積み上がります。<br>まずは5分の動画資料から、ご覧ください。</p>
+    <div style="margin-top:24px">
+      <a class="cta" href="https://lin.ee/Yx8M7LxH">▶ 公式LINEで今すぐ無料視聴する！<small>視聴は無料・30秒で登録完了</small></a>
+    </div>
   </div>
 </section>
 
@@ -259,7 +305,7 @@ footer a{margin:0 8px}
 </footer>
 
 <div class="sticky">
-  <a class="cta" href="https://lin.ee/Yx8M7LxH">🟢 公式LINEで無料動画資料を受け取る</a>
+  <a class="cta" href="https://lin.ee/Yx8M7LxH">▶ 無料動画資料を視聴する！<small>公式LINEで今すぐ見られます</small></a>
 </div>
 
 </body>
