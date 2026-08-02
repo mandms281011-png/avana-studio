@@ -67,12 +67,16 @@ h2.cat::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba
 .tall .ph{aspect-ratio:9/13}
 .wide .ph{aspect-ratio:16/10}
 .note{color:var(--muted);font-size:.82rem;margin-top:26px;text-align:center}
-.video-wrap{max-width:420px;margin:0 auto;text-align:center}
-.video-wrap video{width:100%;aspect-ratio:9/16;border-radius:22px;border:1px solid rgba(79,123,255,.45);
+.vrow{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:780px;margin:0 auto;text-align:center}
+.vrow video{width:100%;aspect-ratio:9/16;border-radius:22px;border:1px solid rgba(79,123,255,.45);
   box-shadow:0 0 60px -12px rgba(79,123,255,.6);background:#0a0e1f;display:block}
-.video-cap{padding:16px 6px 0}
+.vwide{max-width:780px;margin:30px auto 0;text-align:center}
+.vwide video{width:100%;aspect-ratio:16/9;border-radius:22px;border:1px solid rgba(79,123,255,.45);
+  box-shadow:0 0 60px -12px rgba(79,123,255,.6);background:#0a0e1f;display:block}
+.video-cap{padding:14px 6px 0}
 .video-cap h3{font-size:.98rem;font-weight:700}
 .video-cap p{color:var(--muted);font-size:.82rem}
+@media(max-width:560px){.vrow{grid-template-columns:1fr}}
 .cta-box{border-radius:24px;padding:52px 30px;text-align:center;margin:30px 0 10px;
   background:linear-gradient(150deg,rgba(34,211,238,.14),rgba(79,123,255,.12) 50%,rgba(168,85,247,.16));
   border:1px solid rgba(79,123,255,.4)}
@@ -105,13 +109,33 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.82rem;bord
   <div class="wrap">
     <h2 class="cat">🎬 アバター動画</h2>
     <p class="cat-note">実際のAIアバター動画サンプル。この人物は撮影されていません——写真と音声から生成されています。</p>
-    <div class="video-wrap">
-      <video controls playsinline preload="metadata" poster="works/avatar-video-1-poster.jpg">
-        <source src="works/avatar-video-1.mp4" type="video/mp4">
+    <div class="vrow">
+      <div class="vitem">
+        <video controls playsinline preload="metadata" poster="works/avatar-video-1-poster.jpg">
+          <source src="works/avatar-video-1.mp4" type="video/mp4">
+        </video>
+        <div class="video-cap">
+          <h3>ブランドムービー</h3>
+          <p>縦型9:16／27秒／SNS広告・LINE配信用</p>
+        </div>
+      </div>
+      <div class="vitem">
+        <video controls playsinline preload="metadata" poster="works/avatar-video-2-poster.jpg">
+          <source src="works/avatar-video-2.mp4" type="video/mp4">
+        </video>
+        <div class="video-cap">
+          <h3>トークアバター（別モデル）</h3>
+          <p>縦型9:16／83秒／商品紹介・SNS向け</p>
+        </div>
+      </div>
+    </div>
+    <div class="vwide">
+      <video controls playsinline preload="metadata" poster="works/webinar-sample-poster.jpg">
+        <source src="works/webinar-sample.mp4" type="video/mp4">
       </video>
       <div class="video-cap">
-        <h3>ブランドムービー「顔出しなしで、あなたの想いを動画に。」</h3>
-        <p>縦型9:16／27秒／SNS広告・LINE配信用</p>
+        <h3>ウェビナー動画（冒頭抜粋）</h3>
+        <p>横型16:9／全編19分のスライド連動セミナーをアバターが進行</p>
       </div>
     </div>
   </div>
@@ -135,7 +159,6 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.82rem;bord
     <p class="cat-note">SNS広告用の縦型バナー・動画用カード。コピーライティングからデザインまで一貫制作。</p>
     <div class="grid">
       <div class="work tall"><div class="ph"><img src="works/banner-avatar.jpg" alt="広告バナー アバター入り" loading="lazy"></div><div class="cap"><h3>縦型広告バナー</h3><p>アバター×ライトストリーク</p></div></div>
-      <div class="work tall"><div class="ph"><img src="works/banner-copy.jpg" alt="広告バナー コピー主体" loading="lazy"></div><div class="cap"><h3>コピー主体バナー</h3><p>A/Bテスト用バリエーション</p></div></div>
       <div class="work tall"><div class="ph"><img src="works/card-cta.jpg" alt="動画広告用CTAカード" loading="lazy"></div><div class="cap"><h3>動画広告用CTA画面</h3><p>QR・LINE誘導付きエンドカード</p></div></div>
       <div class="work tall"><div class="ph"><img src="works/banner-avana-bust.jpg" alt="AVANAキービジュアル バストアップ" loading="lazy"></div><div class="cap"><h3>キービジュアル「24時間届ける」</h3><p>ホワイトスーツ×ライトウェーブ</p></div></div>
       <div class="work tall"><div class="ph"><img src="works/banner-avana-city.jpg" alt="AVANAキービジュアル 夜景全身" loading="lazy"></div><div class="cap"><h3>キービジュアル（夜景・全身）</h3><p>シティスケープ合成バリエーション</p></div></div>
