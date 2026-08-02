@@ -35,12 +35,12 @@ h2 .gold{color:var(--gold)}
 .hr-grad{width:64px;height:4px;background:var(--hotgrad);border-radius:2px;margin:18px auto 0}
 .gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
 /* CTA */
-.cta{display:block;background:linear-gradient(180deg,var(--green2),var(--green));color:#fff;text-align:center;font-weight:900;font-size:1.06rem;padding:16px 18px;border-radius:12px;box-shadow:0 10px 28px -8px rgba(31,191,62,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .15s}
+.cta{display:block;background:linear-gradient(180deg,var(--green2),var(--green));color:#fff;text-align:center;font-weight:900;font-size:1.06rem;padding:16px 18px;border-radius:12px;box-shadow:0 10px 28px -8px rgba(31,191,62,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .15s;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{filter:brightness(1);box-shadow:0 10px 26px -8px rgba(31,191,62,.6),inset 0 1px 0 rgba(255,255,255,.35)}50%{filter:brightness(1.32);box-shadow:0 10px 44px -2px rgba(42,209,76,1),0 0 30px rgba(42,209,76,.55),inset 0 1px 0 rgba(255,255,255,.5)}}
 .cta:active{transform:scale(.97)}
 .cta small{display:block;font-weight:700;font-size:.78rem;opacity:.95;margin-top:2px}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,15,36,.85);backdrop-filter:blur(14px);border-top:1px solid var(--brd)}
-.sticky .cta{max-width:492px;margin:0 auto;animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 10px 26px -8px rgba(31,191,62,.65)}50%{box-shadow:0 10px 36px -4px rgba(31,191,62,1)}}
+.sticky .cta{max-width:492px;margin:0 auto}
 /* HERO */
 .hero{position:relative;overflow:hidden;padding:52px 0 0;background:
 radial-gradient(600px 420px at 85% -5%,rgba(139,61,240,.4),transparent 60%),
