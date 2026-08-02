@@ -66,6 +66,10 @@ h2.cat::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba
 .work .cap p{color:var(--muted);font-size:.82rem}
 .tall .ph{aspect-ratio:9/13}
 .wide .ph{aspect-ratio:16/10}
+/* full-visibility tiles: no cropping (for banners with text / composed visuals) */
+.work.fit .ph{aspect-ratio:9/16;background:#080d1d;display:flex;align-items:center;justify-content:center}
+.work.fit .ph img{object-fit:contain}
+.work.fit.sq .ph{aspect-ratio:9/13}
 .note{color:var(--muted);font-size:.82rem;margin-top:26px;text-align:center}
 .vrow{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:780px;margin:0 auto;text-align:center}
 .vrow video{width:100%;aspect-ratio:9/16;border-radius:22px;border:1px solid rgba(79,123,255,.45);
@@ -148,7 +152,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.82rem;bord
     <div class="grid">
       <div class="work tall"><div class="ph"><img src="works/avatar-front.jpg" alt="AIアバター 正面カット" loading="lazy"></div><div class="cap"><h3>ビジネスアバター（笑顔）</h3><p>広告・SNS向けカット</p></div></div>
       <div class="work tall"><div class="ph"><img src="works/avatar-suit.jpg" alt="AIアバター 別表情カット" loading="lazy"></div><div class="cap"><h3>ビジネスアバター（落ち着き）</h3><p>ウェビナー・企業案内向け</p></div></div>
-      <div class="work tall"><div class="ph"><img src="works/avatar-tablet.jpg" alt="AIアバター タブレット合成" loading="lazy"></div><div class="cap"><h3>小物・合成演出</h3><p>タブレット画面へのUI合成例</p></div></div>
+      <div class="work tall fit sq"><div class="ph"><img src="works/avatar-hologram.jpg" alt="AIアバター 小物・ホログラム合成" loading="lazy"></div><div class="cap"><h3>小物・合成演出</h3><p>タブレット×ホログラム合成（提案イメージ）</p></div></div>
     </div>
   </div>
 </section>
@@ -158,10 +162,11 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.82rem;bord
     <h2 class="cat">📣 広告クリエイティブ</h2>
     <p class="cat-note">SNS広告用の縦型バナー・動画用カード。コピーライティングからデザインまで一貫制作。</p>
     <div class="grid">
-      <div class="work tall"><div class="ph"><img src="works/banner-avatar.jpg" alt="広告バナー アバター入り" loading="lazy"></div><div class="cap"><h3>縦型広告バナー</h3><p>アバター×ライトストリーク</p></div></div>
-      <div class="work tall"><div class="ph"><img src="works/card-cta.jpg" alt="動画広告用CTAカード" loading="lazy"></div><div class="cap"><h3>動画広告用CTA画面</h3><p>QR・LINE誘導付きエンドカード</p></div></div>
-      <div class="work tall"><div class="ph"><img src="works/banner-avana-bust.jpg" alt="AVANAキービジュアル バストアップ" loading="lazy"></div><div class="cap"><h3>キービジュアル「24時間届ける」</h3><p>ホワイトスーツ×ライトウェーブ</p></div></div>
-      <div class="work tall"><div class="ph"><img src="works/banner-avana-city.jpg" alt="AVANAキービジュアル 夜景全身" loading="lazy"></div><div class="cap"><h3>キービジュアル（夜景・全身）</h3><p>シティスケープ合成バリエーション</p></div></div>
+      <div class="work tall fit"><div class="ph"><img src="works/banner-avatar.jpg" alt="広告バナー アバター入り" loading="lazy"></div><div class="cap"><h3>縦型広告バナー</h3><p>アバター×ライトストリーク</p></div></div>
+      <div class="work tall fit"><div class="ph"><img src="works/card-cta.jpg" alt="動画広告用CTAカード" loading="lazy"></div><div class="cap"><h3>動画広告用CTA画面</h3><p>QR・LINE誘導付きエンドカード</p></div></div>
+      <div class="work tall fit"><div class="ph"><img src="works/banner-avana-bust.jpg" alt="AVANAキービジュアル バストアップ" loading="lazy"></div><div class="cap"><h3>キービジュアル「24時間届ける」</h3><p>ホワイトスーツ×ライトウェーブ</p></div></div>
+      <div class="work tall fit"><div class="ph"><img src="works/banner-avana-city.jpg" alt="AVANAキービジュアル 夜景全身" loading="lazy"></div><div class="cap"><h3>キービジュアル（夜景・全身）</h3><p>シティスケープ合成バリエーション</p></div></div>
+      <div class="work tall fit"><div class="ph"><img src="works/banner-avana-family.jpg" alt="AVANAキービジュアル ライフスタイル" loading="lazy"></div><div class="cap"><h3>キービジュアル（ライフスタイル）</h3><p>親子・住宅街×ライトウェーブ合成</p></div></div>
     </div>
   </div>
 </section>
