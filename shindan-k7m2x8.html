@@ -64,6 +64,26 @@ border-radius:14px;padding:16px 16px;margin-bottom:18px}
 .pts li{font-size:.86rem;padding:8px 0 8px 24px;position:relative;color:#e6e9ff;border-top:1px solid rgba(255,255,255,.08)}
 .pts li:first-child{border-top:none}
 .pts li::before{content:"✓";position:absolute;left:0;top:8px;color:var(--cyan);font-weight:900}
+/* money */
+.money .mlead{font-size:.88rem;color:#e6e9ff;margin-bottom:14px}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+padding:11px 0;border-top:1px solid rgba(255,255,255,.1)}
+.mlab{font-size:.83rem;color:var(--muted);flex:none}
+.mval{font-size:1.18rem;font-weight:900;color:var(--gold);text-align:right;line-height:1.4}
+.mnote{font-size:.87rem;color:#e6e9ff;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+.mnote b{color:var(--cyan)}
+.mdis{font-size:.72rem;color:var(--muted);margin-top:10px;line-height:1.7}
+/* before after */
+.ba{display:flex;flex-direction:column;gap:0}
+.barow{padding:14px 0;border-top:1px solid rgba(255,255,255,.1)}
+.barow:first-child{border-top:none;padding-top:0}
+.bascene{font-size:.79rem;font-weight:900;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.bab,.baa{font-size:.86rem;display:flex;gap:9px;align-items:flex-start;line-height:1.75}
+.bab{color:var(--muted)}
+.baa{color:#f2f4ff;margin-top:6px;font-weight:700}
+.bab .tag,.baa .tag{flex:none;font-size:.68rem;font-weight:900;padding:2px 8px;border-radius:99px;margin-top:4px}
+.bab .tag{background:rgba(255,255,255,.09);color:var(--muted)}
+.baa .tag{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
 .cta{display:block;margin:22px auto 0;background:linear-gradient(180deg,var(--green2),var(--green));
 color:#fff;text-decoration:none;font-weight:900;font-size:1rem;padding:16px 18px;border-radius:12px;
 box-shadow:0 10px 30px -8px rgba(31,191,62,.7);text-align:center}
@@ -128,6 +148,22 @@ footer{margin-top:auto;padding-top:36px;color:var(--muted);font-size:.72rem;text
     <div class="sec">
       <div class="sech">この1本で変わること</div>
       <div class="card"><ul class="pts" id="fpts"></ul></div>
+    </div>
+
+    <div class="sec" id="moneysec">
+      <div class="sech">撮影でつくった場合との差</div>
+      <div class="card money">
+        <p class="mlead" id="mlead"></p>
+        <div class="mrow"><span class="mlab">制作費の目安</span><span class="mval" id="mcost"></span></div>
+        <div class="mrow"><span class="mlab">社内で取られる時間</span><span class="mval" id="mtime"></span></div>
+        <p class="mnote" id="mnote"></p>
+        <p class="mdis">※ 一般的な実写動画制作の相場（1本あたり20〜50万円）と、1本あたり社内2日（打ち合わせ・撮影立ち会い・確認と撮り直し）で計算した概算です。内容や尺によって変わります。</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sech">実際に使うと、こう変わります</div>
+      <div class="card ba" id="babox"></div>
     </div>
 
     <div class="sec">
@@ -195,31 +231,46 @@ const RESULTS = {
      lead:"あなたの事業では、AIアバターは「新しいお客様と出会う入口」で最も効きます。広告やSNSは、出す本数と試した回数がそのまま結果に直結する世界です。ところが撮影が必要なうちは、1本作るのに何日もかかり、試す回数を増やせません。ここが外れると、一気に動き出します。",
      ftitle:"20〜30秒の縦型ショート動画",
      fbody:"商品やサービスを「ひとこと」で言い切る短い動画です。まずは訴求の違う3パターンを作り、反応のよかった型だけを残していきます。台本を差し替えるだけで次が作れるので、2本目からは驚くほど早くなります。",
-     pts:["撮影の日程調整がなくなり、思いついた日に出せる","訴求違いを何本も試せるので、当たりを見つけやすい","反応が落ちてきたら、すぐ作り直せる"]},
+     pts:["撮影の日程調整がなくなり、思いついた日に出せる","訴求違いを何本も試せるので、当たりを見つけやすい","反応が落ちてきたら、すぐ作り直せる"],
+     ba:[["新しい訴求を試したいとき","撮影の日程を押さえ、台本を覚え、当日に撮る。早くて2週間、月1本が限界。","台本を書いて渡すだけ。数日で3パターンが並び、同じ週に出せる。"],
+         ["反応が悪かったとき","撮り直しにまた撮影費と日程がかかるので、当たらないまま出し続けることになる。","効かなかった型は捨てて、翌週には次の型を試せる。当たりを見つけるまでが速い。"],
+         ["続けていくと","本数が増えるほど、費用も手間も比例して増えていく。","2本目以降はアバターの制作が要らないので、続けるほど1本が軽くなる。"]]},
 
   B:{name:"説明自動化型",
      lead:"あなたはいま、同じ説明を人を変えて何度も繰り返しています。この時間は、動画に置き換えるのが最も効果の大きい部分です。先に動画を見てもらってから話すだけで、商談は「説明の場」から「決める場」に変わります。",
      ftitle:"5〜10分のサービス説明動画",
      fbody:"いつも口頭でしている説明を、そのまま1本にまとめます。お問い合わせが来たらまずこれを送る。相手は自分のペースで見られますし、社内で共有もしてもらえます。あなたが同じ話をする回数は、はっきり減ります。",
-     pts:["初回の説明を、動画に任せられる","相手の社内にも、内容がそのまま正確に伝わる","話す相手が増えても、負担は増えない"]},
+     pts:["初回の説明を、動画に任せられる","相手の社内にも、内容がそのまま正確に伝わる","話す相手が増えても、負担は増えない"],
+     ba:[["問い合わせが来たとき","日程を合わせて60分。同じ説明を、相手が変わるたびに最初から。","先に動画を送る。相手は好きな時間に見て、理解した状態で来る。"],
+         ["商談の中身","半分以上が説明で消える。質問や見積もりの話は、いつも時間切れ間際。","最初から「どう進めるか」の話ができる。決まるまでが短くなる。"],
+         ["相手の社内で検討されるとき","同席していない決裁者には、担当者の記憶を通した内容しか伝わらない。","動画がそのまま回る。誰が見ても同じ説明が、正確に届く。"]]},
 
   C:{name:"社内ナレッジ型",
      lead:"教える内容が、人の頭の中にたまっているタイプです。人が増えるたび、辞めるたびに、同じ説明をやり直すことになります。これを動画にしておくと、教える手間が「一度きり」になります。",
      ftitle:"10分前後の研修・レッスン動画",
      fbody:"いちばん頻繁に教えている内容から1本にします。章に分けておけば、必要なところだけ見返せます。内容が変わったときも、台本のその部分を差し替えるだけで作り直せるのが、撮影動画との決定的な違いです。",
-     pts:["新しい人が入るたびの説明が要らなくなる","教える人によって内容がぶれない","更新が台本の差し替えだけで済む"]},
+     pts:["新しい人が入るたびの説明が要らなくなる","教える人によって内容がぶれない","更新が台本の差し替えだけで済む"],
+     ba:[["新しい人が入ったとき","そのたびに半日〜1日、手を止めて同じ説明をする。教える人の予定も押さえる必要がある。","動画を渡して先に見てもらう。こちらは質問に答えるだけで済む。"],
+         ["教える人が複数いると","人によって説明の順番も強調点も変わり、受け取る側の理解にばらつきが出る。","全員が同じ内容を、同じ順番で受け取る。あとから確認もできる。"],
+         ["内容が変わったとき","資料と口頭の両方を直す。撮影した動画なら、また撮り直し。","台本のその部分を差し替えるだけ。撮り直しは発生しない。"]]},
 
   D:{name:"採用ブランディング型",
      lead:"人を集めたい段階では、「どんな人が働いているか」「何を大事にしている会社か」が伝わるかどうかで応募数が変わります。文字だけの求人票では、ここがほとんど伝わりません。",
      ftitle:"1〜2分の会社紹介・メッセージ動画",
      fbody:"求人票には書ききれない、仕事の中身と会社の空気を伝える1本です。求人媒体、自社サイト、SNSのどこにでも置けます。応募前に見てもらえるので、来る人の質そのものが変わります。",
-     pts:["求人票では伝わらない部分が伝わる","応募前に理解が進み、ミスマッチが減る","媒体を変えても、同じ1本を使い回せる"]},
+     pts:["求人票では伝わらない部分が伝わる","応募前に理解が進み、ミスマッチが減る","媒体を変えても、同じ1本を使い回せる"],
+     ba:[["応募者が会社を見るとき","文字の求人票だけ。仕事の中身も雰囲気も伝わらないまま、条件だけで比べられる。","応募前に動画を見てもらえる。何をする会社かが、先に伝わる。"],
+         ["面接の場で","毎回、会社の説明から始まる。同じ話を応募者の人数だけ繰り返す。","説明は済んでいる。相手を見極める時間に、最初から使える。"],
+         ["採用したあと","入ってから「思っていたのと違う」が起きやすい。","理解したうえで応募してくるので、早期の辞退が減る。"]]},
 
   E:{name:"海外展開型",
      lead:"多言語の予定があるなら、AIアバターの効果はここで最大になります。人が話す動画を他言語で作り直すには、翻訳・収録・出演者の手配がその都度必要です。AIアバターは、台本を訳せば、同じ人物が同じ表情で別の言語を話します。",
      ftitle:"日本語版＋外国語版のサービス紹介動画",
      fbody:"まず日本語で1本を完成させ、その台本を翻訳して同じアバターで別言語版を作ります。撮り直しは発生しません。話者が同一なので、どの言語でもブランドの印象が揃うのも大きな利点です。",
-     pts:["言語を増やしても、撮影が発生しない","どの言語でも、同じ人物・同じ印象で伝わる","対応言語を、必要になった時点で足していける"]}
+     pts:["言語を増やしても、撮影が発生しない","どの言語でも、同じ人物・同じ印象で伝わる","対応言語を、必要になった時点で足していける"],
+     ba:[["英語版が必要になったとき","翻訳して、話せる人を手配して、また撮影する。数週間と、日本語版とほぼ同じ費用。","台本を訳して通すだけ。同じアバターが英語で話す版が、数日で揃う。"],
+         ["さらに言語を増やすとき","1言語増えるたびに、同じ手間と費用がもう一度かかる。","2言語目も3言語目も、増えるのは翻訳の分だけ。"],
+         ["海外の相手から見たとき","言語ごとに話す人が違い、会社の印象がばらつく。","どの言語でも同じ人物が話す。ブランドの見え方が揃う。"]]}
 };
 
 let idx=0, ans=[], score={A:0,B:0,C:0,D:0,E:0}, flags={};
@@ -267,11 +318,33 @@ function finish(){
   document.getElementById('ftitle').textContent=r.ftitle;
   document.getElementById('fbody').textContent=r.fbody;
   document.getElementById('fpts').innerHTML=r.pts.map(p=>`<li>${p}</li>`).join('');
+  document.getElementById('babox').innerHTML=r.ba.map(b=>
+    `<div class="barow"><div class="bascene">${b[0]}</div>`+
+    `<div class="bab"><span class="tag">いま</span><span>${b[1]}</span></div>`+
+    `<div class="baa"><span class="tag">導入後</span><span>${b[2]}</span></div></div>`).join('');
+  buildMoney();
   document.getElementById('lossbox').innerHTML=buildLoss().map(t=>`<p>${t}</p>`).join('');
 
   document.getElementById('quiz').classList.add('hide');
   document.getElementById('result').classList.remove('hide');
   window.scrollTo(0,0);
+}
+
+function buildMoney(){
+  // 回答された年間本数から、実写で作った場合の概算を出す
+  const M={few:{n:2,lab:"年2本"},mid:{n:6,lab:"年6本"},many:{n:12,lab:"年12本"},unknown:{n:4,lab:"年4本"}};
+  const m=M[flags.q4]||M.unknown;
+  const lo=m.n*20, hi=m.n*50, days=m.n*2;
+  document.getElementById('mlead').innerHTML =
+    (flags.q4==='unknown'
+      ? "本数はこれからとのことでしたので、<b>仮に年4本</b>としてご覧ください。"
+      : `いまのご回答（<b>${m.lab}</b>）を、撮影でつくった場合の概算です。`);
+  document.getElementById('mcost').textContent = `${lo}〜${hi}万円`;
+  document.getElementById('mtime').textContent = `約${days}日`;
+  document.getElementById('mnote').innerHTML =
+    `AIアバターに置き換えると、この<b>撮影費と社内の${days}日が、まるごと不要になります</b>。`+
+    `スタジオも、機材も、出演者の拘束も発生しません。2本目からはアバターの制作も要らないので、本数が増えるほど差は開きます。`+
+    `<br><br>浮いた費用と時間が、御社の場合いくらになるか——診断の場で、実際の本数をうかがって計算してお出しします。`;
 }
 
 function buildLoss(){
