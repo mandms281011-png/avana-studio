@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIアバター活用タイプ診断｜AVANA STUDIO</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--navy:#0a0f24;--gold:#e8c56b;--muted:#aab3d6;--brd:rgba(255,255,255,.12);
+--green:#1fbf3e;--green2:#2ad14c;--cyan:#39d0e8;--purple:#8b3df0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+background:radial-gradient(600px 400px at 85% -5%,rgba(139,61,240,.35),transparent 60%),
+radial-gradient(560px 420px at 0% 10%,rgba(229,48,143,.28),transparent 60%),#0a0f24;
+color:#f2f4ff;line-height:1.85;-webkit-font-smoothing:antialiased;min-height:100vh;
+display:flex;flex-direction:column;align-items:center;padding:28px 16px 56px}
+.wrap{width:100%;max-width:640px}
+.chip{display:inline-block;background:#fff;color:#12102e;font-weight:900;font-size:.76rem;padding:5px 16px;border-radius:999px}
+h1{font-size:1.42rem;font-weight:900;margin:12px 0 6px;font-family:"Hiragino Mincho ProN",serif;line-height:1.5}
+h1 .gd{color:var(--gold)}
+.lead{color:var(--muted);font-size:.86rem}
+.center{text-align:center}
+
+/* intro */
+.introbox{margin-top:22px;background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:16px;padding:20px 18px}
+.introbox ul{list-style:none;margin:12px 0 0}
+.introbox li{font-size:.87rem;padding:7px 0 7px 26px;position:relative;color:#e6e9ff}
+.introbox li::before{content:"";position:absolute;left:4px;top:15px;width:9px;height:9px;border-radius:50%;
+background:linear-gradient(135deg,var(--cyan),var(--purple))}
+.note{color:var(--muted);font-size:.76rem;margin-top:14px}
+
+/* progress */
+.pbar{height:5px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin-bottom:8px}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .35s ease}
+.pnum{color:var(--muted);font-size:.75rem;letter-spacing:.06em;margin-bottom:16px}
+
+/* question */
+.q{font-size:1.1rem;font-weight:900;margin-bottom:16px;line-height:1.6}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:13px;padding:14px 16px;
+font-size:.92rem;font-weight:700;color:#f2f4ff;text-align:left;cursor:pointer;transition:.18s;
+display:flex;align-items:center;gap:12px;width:100%;font-family:inherit;line-height:1.6}
+.opt:hover,.opt:focus-visible{border-color:var(--cyan);background:rgba(57,208,232,.12);outline:none;transform:translateY(-1px)}
+.opt .mk{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--brd);
+display:grid;place-items:center;font-size:.72rem;font-weight:900;color:var(--muted)}
+.opt:hover .mk{border-color:var(--cyan);color:var(--cyan)}
+.back{margin-top:18px;background:none;border:none;color:var(--muted);font-size:.8rem;cursor:pointer;
+font-family:inherit;text-decoration:underline;padding:4px}
+
+/* result */
+.rtag{display:inline-block;font-size:.74rem;font-weight:900;letter-spacing:.1em;color:var(--cyan);margin-bottom:6px}
+.rname{font-size:1.62rem;font-weight:900;font-family:"Hiragino Mincho ProN",serif;line-height:1.4;margin-bottom:10px}
+.rname .gd{color:var(--gold)}
+.rlead{color:#e6e9ff;font-size:.92rem;background:rgba(255,255,255,.05);border:1px solid var(--brd);
+border-radius:14px;padding:16px 16px;margin-bottom:18px}
+.sec{margin-top:20px}
+.sech{font-size:.78rem;font-weight:900;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
+.card{background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:14px;padding:16px}
+.card p{font-size:.88rem;color:#e6e9ff}
+.card p+p{margin-top:10px}
+.first{border-left:3px solid var(--cyan)}
+.first .ttl{font-weight:900;font-size:1rem;margin-bottom:6px}
+.pts{list-style:none}
+.pts li{font-size:.86rem;padding:8px 0 8px 24px;position:relative;color:#e6e9ff;border-top:1px solid rgba(255,255,255,.08)}
+.pts li:first-child{border-top:none}
+.pts li::before{content:"✓";position:absolute;left:0;top:8px;color:var(--cyan);font-weight:900}
+.cta{display:block;margin:22px auto 0;background:linear-gradient(180deg,var(--green2),var(--green));
+color:#fff;text-decoration:none;font-weight:900;font-size:1rem;padding:16px 18px;border-radius:12px;
+box-shadow:0 10px 30px -8px rgba(31,191,62,.7);text-align:center}
+.cta small{display:block;font-weight:700;font-size:.75rem;opacity:.95;margin-top:2px}
+.after{margin-top:14px;color:var(--muted);font-size:.8rem;text-align:center}
+.redo{display:block;margin:16px auto 0;background:none;border:1px solid var(--brd);color:var(--muted);
+font-size:.8rem;padding:9px 18px;border-radius:99px;cursor:pointer;font-family:inherit}
+footer{margin-top:auto;padding-top:36px;color:var(--muted);font-size:.72rem;text-align:center}
+.hide{display:none}
+@media(max-width:420px){h1{font-size:1.26rem}.rname{font-size:1.4rem}.q{font-size:1.02rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="center">
+      <span class="chip">LINE登録者 限定特典</span>
+      <h1>AIアバター<span class="gd">活用タイプ</span>診断</h1>
+      <p class="lead">7つの質問に答えるだけ。約2分で終わります。</p>
+    </div>
+    <div class="introbox">
+      <p style="font-size:.9rem;font-weight:900">この診断でわかること</p>
+      <ul>
+        <li>あなたの事業で、AIアバターが<b>いちばん効く場所</b></li>
+        <li>最初に作るべき動画、その<b>1本の中身</b></li>
+        <li>いま動画を作らないことで、<b>何を損しているか</b></li>
+      </ul>
+      <p class="note">※ 診断結果はこの画面に表示されます。メールアドレスの入力や登録は必要ありません。</p>
+    </div>
+    <button class="cta" style="border:none;cursor:pointer;font-family:inherit;width:100%" onclick="start()">
+      診断をはじめる<small>所要時間 約2分・全7問</small>
+    </button>
+  </section>
+
+  <!-- QUESTION -->
+  <section id="quiz" class="hide">
+    <div class="pbar"><i id="pfill"></i></div>
+    <div class="pnum" id="pnum">Q1 / 7</div>
+    <div class="q" id="qtext"></div>
+    <div class="opts" id="opts"></div>
+    <button class="back hide" id="backBtn" onclick="back()">← ひとつ前に戻る</button>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="hide">
+    <div class="center">
+      <div class="rtag">あなたのタイプは</div>
+      <div class="rname" id="rname"></div>
+    </div>
+    <div class="rlead" id="rlead"></div>
+
+    <div class="sec">
+      <div class="sech">最初に作るべき1本</div>
+      <div class="card first">
+        <div class="ttl" id="ftitle"></div>
+        <p id="fbody"></p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sech">この1本で変わること</div>
+      <div class="card"><ul class="pts" id="fpts"></ul></div>
+    </div>
+
+    <div class="sec">
+      <div class="sech">回答から見えた、もったいないポイント</div>
+      <div class="card" id="lossbox"></div>
+    </div>
+
+    <a class="cta" href="https://liff.line.me/2010936082-9eXcWmRJ?calendar_salon_id=29757">
+      この結果をもとに相談する<small>無料のAI導入診断・オンライン30分</small>
+    </a>
+    <p class="after">診断結果の画面をそのままお見せいただければ、当日はその続きから始められます。<br>売り込みの時間は取りません。</p>
+    <button class="redo" onclick="location.reload()">もう一度診断する</button>
+  </section>
+
+</div>
+<footer>© 2026 株式会社SIayell（AVANA STUDIO）</footer>
+
+<script>
+// タイプ: A=集客ブースト B=説明自動化 C=社内ナレッジ D=採用ブランディング E=海外展開
+const QS = [
+  {q:"あなたのお仕事に、いちばん近いものはどれですか？",
+   o:[["商品・サービスを一般のお客様に売っている",{A:2,B:1}],
+      ["法人・事業者向けに営業している",{B:2,A:1}],
+      ["教える仕事（講座・スクール・士業・コンサル）",{C:2,B:1}],
+      ["店舗・サロンを運営している",{A:2,D:1}],
+      ["その他・複数にまたがる",{A:1,B:1,C:1}]]},
+
+  {q:"いま、いちばん時間を取られているのはどれですか？",
+   o:[["新しいお客様を集めること",{A:3}],
+      ["同じ説明を、相手を変えて何度もすること",{B:3}],
+      ["社内の教育・引き継ぎ・研修",{C:3}],
+      ["人を採ること、応募を集めること",{D:3}],
+      ["特に思いあたらない",{A:1,B:1}]]},
+
+  {q:"動画をつくった経験はありますか？",
+   o:[["まったくない",{A:1,B:1},"none"],
+      ["作ったことはあるが、続かなかった",{A:1,B:1},"stopped"],
+      ["いまも定期的に作っている",{A:2},"active"]]},
+
+  {q:"カメラの前に立つことについては、どうお考えですか？",
+   o:[["顔は出したくない",{A:1,B:1},"noface"],
+      ["できれば出たくない",{A:1,B:1},"maybe"],
+      ["抵抗はない。むしろ出たい",{D:1},"ok"]]},
+
+  {q:"これから1年で、動画はどれくらい必要になりそうですか？",
+   o:[["1〜3本くらい",{},"few"],
+      ["4〜11本くらい",{A:1,B:1},"mid"],
+      ["12本以上（毎月のように使う）",{A:2,B:2},"many"],
+      ["まだわからない",{},"unknown"]]},
+
+  {q:"海外のお客様や、多言語での発信の予定はありますか？",
+   o:[["すでにある、または今年中に始めたい",{E:4},"now"],
+      ["いずれは考えたい",{E:1},"later"],
+      ["予定はない",{},"no"]]},
+
+  {q:"動画以外で、困っていることはありますか？",
+   o:[["ホームページが古い、または無い",{},"hp"],
+      ["問い合わせ対応に時間が取られている",{},"chat"],
+      ["説明用の資料をきちんと作りたい",{},"doc"],
+      ["特にない",{},"none"]]}
+];
+
+const RESULTS = {
+  A:{name:"集客ブースト型",
+     lead:"あなたの事業では、AIアバターは「新しいお客様と出会う入口」で最も効きます。広告やSNSは、出す本数と試した回数がそのまま結果に直結する世界です。ところが撮影が必要なうちは、1本作るのに何日もかかり、試す回数を増やせません。ここが外れると、一気に動き出します。",
+     ftitle:"20〜30秒の縦型ショート動画",
+     fbody:"商品やサービスを「ひとこと」で言い切る短い動画です。まずは訴求の違う3パターンを作り、反応のよかった型だけを残していきます。台本を差し替えるだけで次が作れるので、2本目からは驚くほど早くなります。",
+     pts:["撮影の日程調整がなくなり、思いついた日に出せる","訴求違いを何本も試せるので、当たりを見つけやすい","反応が落ちてきたら、すぐ作り直せる"]},
+
+  B:{name:"説明自動化型",
+     lead:"あなたはいま、同じ説明を人を変えて何度も繰り返しています。この時間は、動画に置き換えるのが最も効果の大きい部分です。先に動画を見てもらってから話すだけで、商談は「説明の場」から「決める場」に変わります。",
+     ftitle:"5〜10分のサービス説明動画",
+     fbody:"いつも口頭でしている説明を、そのまま1本にまとめます。お問い合わせが来たらまずこれを送る。相手は自分のペースで見られますし、社内で共有もしてもらえます。あなたが同じ話をする回数は、はっきり減ります。",
+     pts:["初回の説明を、動画に任せられる","相手の社内にも、内容がそのまま正確に伝わる","話す相手が増えても、負担は増えない"]},
+
+  C:{name:"社内ナレッジ型",
+     lead:"教える内容が、人の頭の中にたまっているタイプです。人が増えるたび、辞めるたびに、同じ説明をやり直すことになります。これを動画にしておくと、教える手間が「一度きり」になります。",
+     ftitle:"10分前後の研修・レッスン動画",
+     fbody:"いちばん頻繁に教えている内容から1本にします。章に分けておけば、必要なところだけ見返せます。内容が変わったときも、台本のその部分を差し替えるだけで作り直せるのが、撮影動画との決定的な違いです。",
+     pts:["新しい人が入るたびの説明が要らなくなる","教える人によって内容がぶれない","更新が台本の差し替えだけで済む"]},
+
+  D:{name:"採用ブランディング型",
+     lead:"人を集めたい段階では、「どんな人が働いているか」「何を大事にしている会社か」が伝わるかどうかで応募数が変わります。文字だけの求人票では、ここがほとんど伝わりません。",
+     ftitle:"1〜2分の会社紹介・メッセージ動画",
+     fbody:"求人票には書ききれない、仕事の中身と会社の空気を伝える1本です。求人媒体、自社サイト、SNSのどこにでも置けます。応募前に見てもらえるので、来る人の質そのものが変わります。",
+     pts:["求人票では伝わらない部分が伝わる","応募前に理解が進み、ミスマッチが減る","媒体を変えても、同じ1本を使い回せる"]},
+
+  E:{name:"海外展開型",
+     lead:"多言語の予定があるなら、AIアバターの効果はここで最大になります。人が話す動画を他言語で作り直すには、翻訳・収録・出演者の手配がその都度必要です。AIアバターは、台本を訳せば、同じ人物が同じ表情で別の言語を話します。",
+     ftitle:"日本語版＋外国語版のサービス紹介動画",
+     fbody:"まず日本語で1本を完成させ、その台本を翻訳して同じアバターで別言語版を作ります。撮り直しは発生しません。話者が同一なので、どの言語でもブランドの印象が揃うのも大きな利点です。",
+     pts:["言語を増やしても、撮影が発生しない","どの言語でも、同じ人物・同じ印象で伝わる","対応言語を、必要になった時点で足していける"]}
+};
+
+let idx=0, ans=[], score={A:0,B:0,C:0,D:0,E:0}, flags={};
+
+function start(){document.getElementById('intro').classList.add('hide');
+  document.getElementById('quiz').classList.remove('hide');render();window.scrollTo(0,0)}
+
+function render(){
+  const q=QS[idx];
+  document.getElementById('pnum').textContent=`Q${idx+1} / ${QS.length}`;
+  document.getElementById('pfill').style.width=`${(idx/QS.length)*100}%`;
+  document.getElementById('qtext').textContent=q.q;
+  const box=document.getElementById('opts');box.innerHTML='';
+  q.o.forEach((o,i)=>{
+    const b=document.createElement('button');b.className='opt';b.type='button';
+    b.innerHTML=`<span class="mk">${i+1}</span><span>${o[0]}</span>`;
+    b.onclick=()=>pick(i);box.appendChild(b);
+  });
+  document.getElementById('backBtn').classList.toggle('hide',idx===0);
+}
+
+function pick(i){
+  ans[idx]=i;
+  idx++;
+  if(idx<QS.length){render();window.scrollTo(0,0)}else{finish()}
+}
+
+function back(){if(idx>0){idx--;render();window.scrollTo(0,0)}}
+
+function finish(){
+  score={A:0,B:0,C:0,D:0,E:0};flags={};
+  ans.forEach((a,qi)=>{
+    const o=QS[qi].o[a];
+    Object.entries(o[1]||{}).forEach(([k,v])=>score[k]+=v);
+    if(o[2])flags['q'+qi]=o[2];
+  });
+  let top='A',best=-1;
+  ['E','B','C','A','D'].forEach(k=>{if(score[k]>best){best=score[k];top=k}});
+  // 多言語が「今年中」の人は、他のスコアに関わらず海外展開型を優先する
+  if(flags.q5==='now')top='E';
+  const r=RESULTS[top];
+
+  document.getElementById('rname').innerHTML=`<span class="gd">${r.name}</span>`;
+  document.getElementById('rlead').textContent=r.lead;
+  document.getElementById('ftitle').textContent=r.ftitle;
+  document.getElementById('fbody').textContent=r.fbody;
+  document.getElementById('fpts').innerHTML=r.pts.map(p=>`<li>${p}</li>`).join('');
+  document.getElementById('lossbox').innerHTML=buildLoss().map(t=>`<p>${t}</p>`).join('');
+
+  document.getElementById('quiz').classList.add('hide');
+  document.getElementById('result').classList.remove('hide');
+  window.scrollTo(0,0);
+}
+
+function buildLoss(){
+  const out=[];
+  if(flags.q3==='noface'||flags.q3==='maybe'){
+    out.push("<b>顔を出したくない、という理由で止まっていませんか。</b>ここは完全に外せます。実在しないオリジナルの人物でも制作できますし、ご本人が画面に出る必要はありません。この1点だけで、動画を諦めている方はとても多いです。");
+  }
+  if(flags.q4==='many'){
+    out.push("<b>年12本以上なら、1本ごとの撮影は現実的ではありません。</b>撮影の動画は、作るたびに同じ費用と同じ日数がかかります。AIアバターは2本目からアバターの制作が不要なので、本数が増えるほど1本あたりが軽くなります。差が開くのはここからです。");
+  }else if(flags.q4==='unknown'){
+    out.push("<b>必要な本数が読めない段階こそ、始めどきです。</b>撮影は「何本撮るか」を先に決めないと動けませんが、AIアバターは1本ずつ足していけます。まず1本作って、反応を見てから決めても遅くありません。");
+  }
+  if(flags.q2==='stopped'){
+    out.push("<b>一度やめてしまった原因は、たいてい「制作の重さ」です。</b>撮影日を押さえ、話す内容を覚え、撮り直す——この一連が続きません。台本を書けば動画になる形にすると、続けられる負荷まで下がります。");
+  }
+  if(flags.q5==='now'){
+    out.push("<b>多言語の予定があるなら、いま日本語版の作り方を決めておくべきです。</b>撮影で作ってしまうと、言語ごとに撮り直しが発生します。最初からAIアバターで作っておけば、翻訳した台本を通すだけで各言語版が揃います。");
+  }
+  if(flags.q6==='hp'){
+    out.push("動画とあわせて、<b>置き場所であるホームページ</b>も気になっておられるようです。動画・サイト・LINEの導線はまとめて設計したほうが早く、結果的に費用も抑えられます。診断の際にあわせてご相談ください。");
+  }else if(flags.q6==='chat'){
+    out.push("<b>問い合わせ対応の時間</b>も課題とのことでした。よくある質問に24時間答えるAIチャットを、同じアバターで用意することもできます。動画で興味を持った人が、その場で疑問を解消できる形です。");
+  }else if(flags.q6==='doc'){
+    out.push("<b>説明資料</b>もお考えとのことでした。資料と動画は、同じ台本から両方を作るのが最も効率的です。片方だけ先に作ると、後から作り直しになりがちです。");
+  }
+  if(!out.length){
+    out.push("回答を拝見するかぎり、大きな遠回りはされていません。あとは<b>最初の1本をどの内容にするか</b>だけです。ここは事業によって答えが変わるので、診断の場で具体的に決めましょう。");
+  }
+  return out;
+}
+</script>
+</body>
+</html>
