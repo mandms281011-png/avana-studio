@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://mandms281011-png.github.io/avana-studio/sitemap.xml
+
+# AI/LLM 向けのサイト要約
+# https://mandms281011-png.github.io/avana-studio/llms.txt
