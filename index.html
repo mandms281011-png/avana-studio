@@ -18,6 +18,7 @@
 <meta property="og:image" content="https://mandms281011-png.github.io/avana-studio/og-image.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="interactive.css?v=1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -499,13 +500,31 @@ footer{padding:60px 0 34px;font-size:.9rem;color:var(--muted);border-top:1px sol
 </head>
 <body>
 
+<div id="avana-intro" aria-hidden="true">
+  <canvas id="avana-light-tunnel"></canvas>
+  <div class="avana-welcome"><small>ようこそ</small><strong>AVANA STUDIO<span>へ</span></strong></div>
+  <div class="avana-whiteout"></div>
+</div>
+<div id="avana-creative-layer" aria-hidden="true">
+  <div class="avana-stage avana-camera-stage">
+    <div class="avana-gather" data-particles="48"></div>
+    <div class="avana-object"><img src="media/particle-camera-complete.webp" alt=""><i></i></div>
+  </div>
+  <div class="avana-stage avana-pc-stage">
+    <div class="avana-gather" data-particles="48"></div>
+    <div class="avana-object"><img src="media/particle-pc-web-complete.webp" alt=""><i></i></div>
+  </div>
+  <i class="avana-orbit avana-camera-orbit"></i>
+  <i class="avana-orbit avana-pc-orbit"></i>
+</div>
+
 <!-- Header -->
 <header>
   <div class="wrap nav">
     <div class="logo">AVANA<b class="grad-text"> STUDIO</b></div>
     <nav class="nav-links">
       <a href="#service">サービス</a>
-      <a href="#flow">制作の流れ</a>
+      <a href="#reasons">選ばれる理由</a>
       <a href="#usecase">活用シーン</a>
       <a href="portfolio.html">制作実績</a>
       <a href="#price">料金</a>
@@ -629,7 +648,7 @@ footer{padding:60px 0 34px;font-size:.9rem;color:var(--muted);border-top:1px sol
 </section>
 
 <!-- Features -->
-<section>
+<section id="reasons">
   <div class="wrap center">
     <span class="eyebrow">FEATURES</span>
     <h2 class="sec-title">選ばれる4つの理由</h2>
@@ -953,5 +972,6 @@ footer{padding:60px 0 34px;font-size:.9rem;color:var(--muted);border-top:1px sol
       l.style.border='1px solid rgba(255,255,255,.09)';l.style.gap='16px';}
   });
 </script>
+<script src="interactive.js?v=1"></script>
 </body>
 </html>
